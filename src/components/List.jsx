@@ -1,6 +1,13 @@
 import { useEffect, useState } from "react";
 
-export default function List({ score, setScore, maxScore, setMaxScore, loading, setLoading}) {
+export default function List({
+  score,
+  setScore,
+  maxScore,
+  setMaxScore,
+  loading,
+  setLoading,
+}) {
   const [pokemonList, setPokemonList] = useState(null);
   const [chosenCard, setChosenCards] = useState(new Set());
 
@@ -26,7 +33,7 @@ export default function List({ score, setScore, maxScore, setMaxScore, loading, 
     }
 
     fetchPokemon();
-  }, []);
+  }, [setLoading]);
 
   function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
