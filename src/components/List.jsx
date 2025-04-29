@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 
-export default function List({ score, setScore, maxScore, setMaxScore }) {
+export default function List({ score, setScore, maxScore, setMaxScore, loading, setLoading}) {
   const [pokemonList, setPokemonList] = useState(null);
-  const [loading, setLoading] = useState("true");
   const [chosenCard, setChosenCards] = useState(new Set());
 
   useEffect(() => {

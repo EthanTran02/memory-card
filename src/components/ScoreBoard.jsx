@@ -1,4 +1,5 @@
-export default function ScoreBoard({ score, maxScore }) {
+export default function ScoreBoard({ score, maxScore, loading }) {
+  if (loading) return;
   return (
     <div id="score-board">
       <p id="score">Score:{score}</p>
