@@ -23,7 +23,6 @@ export default function List({
           fetch(pokemon.url).then((result) => result.json())
         );
         const detailedData = await Promise.all(detailedPromises);
-        console.log(detailedData);
         setPokemonList(detailedData);
       } catch (error) {
         console.error(`error: ${error}`);
