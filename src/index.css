@@ -22,6 +22,8 @@ body {
   line-height: 1.5;
   /* 5. Improve text rendering */
   -webkit-font-smoothing: antialiased;
+  background-color: #f0f0f0; /* Light gray background */
+  font-family: sans-serif; /* Basic sans-serif font */
 }
 
 /* 6. Improve media defaults */
@@ -72,6 +74,7 @@ h6 {
 #root,
 #__next {
   isolation: isolate;
+  padding: 20px; /* Add some padding around the content */
 }
 
 /* ---------------------------------------------------- */
@@ -97,9 +100,17 @@ h6 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  border: 1px solid black;
+  background-color: #ffffff; /* White background for cards */
+  border: 1px solid #cccccc; /* Lighter border */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transition */
+}
+
+#cards > div:hover {
+  transform: translateY(-5px); /* Lift card on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
 }
 
 #cards > div > img {
@@ -108,6 +119,41 @@ h6 {
 
 #score-board {
   position: absolute;
-  right: 200px;
-  top: 20px;
+  right: 40px; /* Adjust position */
+  top: 40px; /* Adjust position */
+  background-color: #e0e0e0; /* Slightly darker background */
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for Pokemon names on cards */
+.pokemon-name {
+  text-transform: capitalize; /* Capitalize the first letter */
+  font-weight: bold;
+  margin-top: 10px; /* Add some space above the name */
+  text-align: center;
+}
+
+/* Style for the loading message */
+.loading-message {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 1.5em;
+  color: #555;
+}
+
+/* Style for score values in the scoreboard */
+.score-value {
+  font-weight: bold;
+  margin-left: 5px; /* Add a little space after the label */
+}
+
+/* Style for game instructions */
+.game-instructions {
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 20px; /* Add space below instructions */
+  color: #333; /* Dark gray color */
+  font-style: italic;
 }

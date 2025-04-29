@@ -26,7 +26,7 @@ export default function List({
         console.log(detailedData);
         setPokemonList(detailedData);
       } catch (error) {
-        console.errorror(`error: ${error}`);
+        console.error(`error: ${error}`);
       } finally {
         setLoading(false);
       }
@@ -58,17 +58,15 @@ export default function List({
     setPokemonList(newList);
   }
 
-  if (pokemonList) shuffle(pokemonList);
-
-  if (loading) return <h1>Loading...</h1>;
+  if (loading) return <h1 className="loading-message">Loading...</h1>;
 
   return (
     <>
-      <h1>Pokemon list:</h1>
+      {/* Removed redundant h1 */}
       <div id="cards">
         {pokemonList.map((pokemon) => (
           <div key={pokemon.id} onClick={() => handleCardClick(pokemon.id)}>
-            <p>{pokemon.name}</p>
+            <p className="pokemon-name">{pokemon.name}</p>
             <img src={pokemon.sprites.front_default} alt={pokemon.name} />
           </div>
         ))}

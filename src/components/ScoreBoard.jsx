@@ -2,8 +2,8 @@ export default function ScoreBoard({ score, maxScore, loading }) {
   if (loading) return;
   return (
     <div id="score-board">
-      <p id="score">Score:{score}</p>
-      <p id="max-score">Max score: {maxScore}</p>
+      <p>Score: <span className="score-value">{score}</span></p>
+      <p>Max Score: <span className="score-value">{maxScore}</span></p>
     </div>
   );
 }
