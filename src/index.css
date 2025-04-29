@@ -73,3 +73,24 @@ h6 {
 #__next {
   isolation: isolate;
 }
+
+/* ---------------------------------------------------- */
+
+#cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 32px;
+}
+#cards > div {
+  width: 300px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid black;
+}

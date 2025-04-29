@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function PokemonList() {
+export default function List() {
   const [pokemonList, setPokemonList] = useState(null);
   const [loading, setLoading] = useState("true");
 
@@ -28,17 +28,29 @@ export default function PokemonList() {
     fetchPokemon();
   }, []);
 
-  if (loading) return <h1>loading...</h1>;
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+    }
+    return array;
+  }
+
+  if (pokemonList) shuffle(pokemonList);
+
+  if (loading) return <h1>Loading...</h1>;
 
   return (
     <>
       <h1>Pokemon list:</h1>
-      {pokemonList.map((pokemon) => (
-        <div key={pokemon.id}>
-          <p>{pokemon.name}</p>
-          <img src={pokemon.sprites.front_default} alt="" />
-        </div>
-      ))}
+      <div id="cards">
+        {pokemonList.map((pokemon) => (
+          <div key={pokemon.id}>
+            <p>{pokemon.name}</p>
+            <img src={pokemon.sprites.front_default} alt="" />
+          </div>
+        ))}
+      </div>
     </>
   );
 }
