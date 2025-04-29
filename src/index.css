@@ -76,11 +76,17 @@ h6 {
 
 /* ---------------------------------------------------- */
 
+#root > h1 {
+  margin-left: 35px;
+  margin-top: 20px;
+}
+
 #cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  gap: 4px;
 
   margin-top: 32px;
 }
@@ -93,4 +99,15 @@ h6 {
   align-items: center;
 
   border: 1px solid black;
+  cursor: pointer;
+}
+
+#cards > div > img {
+  width: 150px;
+}
+
+#score-board {
+  position: absolute;
+  right: 200px;
+  top: 20px;
 }

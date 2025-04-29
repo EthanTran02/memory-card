@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 
-export default function List() {
+export default function List({ score, setScore, maxScore, setMaxScore }) {
   const [pokemonList, setPokemonList] = useState(null);
   const [loading, setLoading] = useState("true");
+  const [chosenCard, setChosenCards] = useState(new Set());
 
   useEffect(() => {
     async function fetchPokemon() {
@@ -36,6 +37,21 @@ export default function List() {
     return array;
   }
 
+  function handleCardClick(id) {
+    if (chosenCard.has(id)) {
+      if (score > maxScore) setMaxScore(score);
+      setScore(0);
+      setChosenCards(new Set());
+    } else {
+      setScore(score + 1);
+      setChosenCards((prev) => new Set([...prev, id]));
+    }
+
+    const newList = [...pokemonList];
+    shuffle(newList);
+    setPokemonList(newList);
+  }
+
   if (pokemonList) shuffle(pokemonList);
 
   if (loading) return <h1>Loading...</h1>;
@@ -45,9 +61,9 @@ export default function List() {
       <h1>Pokemon list:</h1>
       <div id="cards">
         {pokemonList.map((pokemon) => (
-          <div key={pokemon.id}>
+          <div key={pokemon.id} onClick={() => handleCardClick(pokemon.id)}>
             <p>{pokemon.name}</p>
-            <img src={pokemon.sprites.front_default} alt="" />
+            <img src={pokemon.sprites.front_default} alt={pokemon.name} />
           </div>
         ))}
       </div>
