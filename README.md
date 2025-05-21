@@ -1,13 +1,45 @@
-# React + Vite
+# [Memory Game 🧠](https://doragrishaeva.github.io/react-memory-game/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the Memory Game repo! Match pairs of cards to test and improve your memory with a responsive, seamless experience on any device.
 
-Currently, two official plugins are available:
+Live demo: [https://memorycard-game-ethan.netlify.app/](https://memorycard-game-ethan.netlify.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# memory-card
+## Technologies Used 💻
+
+This project is built with:
+
+- React
+- Vite
+- [PokeApi](https://pokeapi.co/)
+
+## Getting Started 🚀
+
+Follow these simple steps to get a local copy up and running.
+
+## Installation 🚀
+
+Follow these steps to set up a local copy of the Memory Game:
+
+1. **Clone the repository**
+
+   First, clone the repository to your local machine using the following command:
+
+   ```bash
+   git clone https://github.com/EthanTran02/memory-card
+
+2. **Install dependencies**
+
+   Navigate into the project directory and install the necessary dependencies:
+
+   ```bash
+   cd memory-card
+   npm install
+
+3. **Run the development server**
+
+   Start the development server to run the game locally:
+
+   ```bash
+   npm run dev
